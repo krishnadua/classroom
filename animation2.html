@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="assest/css/animation2.css">
+</head>
+<style>
+    
+    #k{ height: 300px;
+    width: 300px;
+background-color: brown;
+    border: 1px green solid;
+
+ animation: moving;
+ animation-name: moving;
+ animation-duration: 5s;
+ animation-delay: 2s;
+ animation-iteration-count: infinite;
+ animation-timing-function: linear;
+position: absolute;
+border-radius: 60%;
+
+}
+@keyframes moving {
+    0%{  background-color: greenyellow; left: 0px; top: 0px;      }
+    25%{
+ left: 400px;
+ top: 0px;
+ background-image: linear-gradient(red,green);
+    }
+    50%{
+        left: 400px;
+        top: 400px;
+ background-image: linear-gradient( orange,darkred);
+    }
+    75%{
+
+        left: 0px;
+        top: 400px;
+        background-color: lightsalmon;
+    }
+    100%{
+        left: 0px;
+        top: 0px;
+ background-color: blue;
+    }
+
+  }
+
+
+</style>
+
+<body>
+
+    <div id="k"> </div>
+
+    <div id="stair"> </div>
+    <div id="stair1"></div>
+    <div id="stair2"></div>
+
+
+
+
+
+</body>
+
+
+
+</html>
