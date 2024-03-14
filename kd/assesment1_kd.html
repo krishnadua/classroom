@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #main{
+            width: 400px;
+            background-color: lightskyblue;
+            border: 2px black solid;
+            border-radius: 5px 25px 25px 25px;
+            /* margin-left: 350px; */
+            margin-left: 10px;
+            margin-top: 20px;
+            /* text-align: center; */
+        }
+        /* #main:hover{
+            width: 400px;
+            background-color: lightskyblue;
+
+        } */
+        span{
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="main">
+
+  <form action="./index.html" >
+        <!-- <fieldset>
+
+            <legend>FORM</legend> -->
+
+        <label for="input">FirstName</label>
+        <input type="text" placeholder="Enter the firstname">
+        <span></span>
+        <br><br>
+
+        <label for="input">MiddleName</label>
+        <input type="text" placeholder="Enter the Middlename">
+        <span></span>
+        <br><br>
+
+        <label for="input">LastName</label>
+        <input type="text" placeholder="Enter the lastname">
+        <span id="last"></span>
+
+        <br><br>
+
+        <label for="course">Course</label>
+
+        <select>
+        <option value="">BCA</option>
+        <option value="">MBA</option>
+        <option value="">BBA</option>
+        <option value="">BTECH</option>
+        </select>
+
+        <br><br>
+
+        <label for="gender">Gender</label>
+
+        <br> 
+
+        <input type="radio" name="ram">
+        <label for="male">Male</label>
+
+        <br>
+
+        <input type="radio" name="ram">
+        <label for="Female">Female</label>
+
+        <br>
+
+        <input type="radio" name="ram">
+        <label for="Others">Others</label>
+        <span id="gender"></span>
+
+        <br> <br>
+
+        <label for="Phone">Phone</label>
+
+        <select name="" id="">
+            <option value="">+91</option>
+            <option value="">+1</option>
+            <option value="">+93</option>
+        </select>   
+
+    <input type="tel" placeholder="Enter the phone number">
+    <span id="num"></span> 
+    <br> <br>
+        <label for="address">Address</label>
+
+        <br>
+        
+        <textarea name="" id="" cols="30" rows="5"></textarea>
+
+        <br><br>
+
+        <label for="input">E-mail</label>
+        <input type="email" placeholder="Enter the e-mail">
+        <span id="mail"></span>
+
+        <br><br>
+
+        <label for="input">Password</label>
+        <input type="password" placeholder="Enter the password">
+        <span id="pass"></span>
+
+        <br><br>
+
+        <label for="input">Retype password</label>
+        <input type="password" placeholder="Enter the Retype Password"><span id="pass2"></span>
+        <br><br>
+
+      
+        <input id="btn2" type="submit"  value="Submit" onclick="validate()" type="submit" style="border-radius: 10px 0px 10px 0px; font-size: 18px;" name="submit"> <a href="index.html">
+
+            
+        <!-- <Button onclick="validate()" type="submit" style="border-radius: 10px 0px 10px 0px; font-size: 18px;">Submit</Button> -->
+        <br> <br>
+    <!-- </fieldset> -->
+    </form>
+  </div>  
+
+<script>
+
+let input=document.querySelectorAll('input');
+let span=document.querySelector('span');
+let data=Array.from(input);
+let btn=document.querySelector('#btn2');
+let last = document.querySelector("#last")
+let num = document.querySelector("#num")
+let mail = document.querySelector("#mail")
+let pass1 = document.querySelector("#pass")
+let pass2 = document.querySelector("#pass2")
+
+
+
+console.log(data[0]);
+
+
+function validate(){
+
+    let naam=data[0].value.length;
+
+
+    if(naam<=3)
+    {
+        span.innerText="**name is too short";
+        console.log(span.innerHTML)
+        btn.type="hidden"
+
+    }
+
+    if(naam==0){
+        span.innerText="** name cannot null"
+        btn.type="hidden"
+    }
+
+    let lastname =data[2].value.length;
+
+    if(lastname<=3)
+    {
+        last.innerText="**lastname too short";
+        console.log(span.innerHTML)
+        btn.type="hidden"
+
+    }
+
+    if(lastname==0){
+        last.innerText="** lastname cannot null"
+        btn.type="hidden"
+    }
+
+    let phonenumber =data[6].value.length;
+
+    if(phonenumber<=9 && phonenumber!=parseInt())
+    {
+        num.innerText="**not a correct number";
+        console.log(span.innerHTML)
+        btn.type="hidden"
+
+    }
+
+    // if(phonenumber!=parseInt()){
+    //     num.innerText="** number cannot be string"
+    //     // btn.type="hidden"
+    // }
+
+    if(phonenumber==0){
+        num.innerText="** number cannot null"
+        btn.type="hidden"
+    }
+
+    if(phonenumber===parseInt){
+        num.innerText="** number cannot string"
+        btn.type="hidden"
+    }
+
+    let email =data[8].value.length;
+
+    // if(email != "@" || email != "gmail.com" )
+    // {
+    //     mail.innerText="** use @ and gmail.com";
+    //     console.log(mail.innerHTML)
+    //     btn.type="hidden"
+
+    // }
+
+    // if(email==0)
+    // {
+    //     mail.innerText="** email cannot null";
+    //     console.log(mail.innerHTML)
+    //     btn.type="hidden"
+
+    // }
+
+    let password1 =data[8].value.length;
+
+    if(password1<=4 && password1===parseInt)
+    {
+        pass1.innerText="** password is to short";
+        console.log(mail.innerHTML)
+        btn.type="hidden"
+
+    }
+    if(password1===0)
+    {
+        pass1.innerText="** password is null";
+        console.log(mail.innerHTML)
+        btn.type="hidden"
+
+    }
+
+    let password2 =data[9].value.length;
+
+    if(password2!=password1)
+    {
+        pass2.innerText="** password is unmached";
+        console.log(mail.innerHTML)
+        btn.type="hidden"
+
+    }
+    if(password2==0)
+    {
+        pass2.innerText="** password is null";
+        console.log(mail.innerHTML)
+        btn.type="hidden"
+
+    }
+
+
+
+}
+
+</script>
+
+
+</body>
+</html>
